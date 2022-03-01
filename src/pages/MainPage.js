@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState  } from 'react';
 import Modal from 'react-modal';
 
 import '../App.css';
 import Header from '../components/Header';
 import TrackerContainer from '../containers/TrackerContainer';
+import UserContext from '../context/UserContext';
 
 const MainPage = () => {
 
@@ -39,7 +40,9 @@ const MainPage = () => {
             </Modal>
 
             <Header name={name}/>
-            <TrackerContainer name={name} goal={goal} />
+            <UserContext.Provider value={{name, setName, goal, setGoal}}>
+                <TrackerContainer />
+            </UserContext.Provider>
         </>
     )
 }
