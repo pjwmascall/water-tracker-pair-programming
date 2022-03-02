@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className={isDarkMode ? "dark" : "light"}>
-      <button onClick={toggleDarkMode}>Dark/Light</button>
+      <button onClick={setIsDarkMode}>Dark/Light</button>
       <MainPage />
     </div>
   );

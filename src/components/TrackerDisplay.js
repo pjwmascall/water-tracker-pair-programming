@@ -4,10 +4,7 @@ import UserContext from '../context/UserContext';
 
 const TrackerDisplay = ({glasses}) => {
 
-    // const [name, setName] = useState('')
-    // const [goal, setGoal] = useState('')
-
-    const {name, setName, goal, setGoal} = useContext(UserContext);
+    const {name, goal} = useContext(UserContext);
 
     return (
         <>
