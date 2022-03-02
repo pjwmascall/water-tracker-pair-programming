@@ -1,11 +1,15 @@
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 
-const [result, setResult] = useState(false)
+const useToggle = (initialState) => {
 
-const useToggle = (toggle) => {
-    setResult(toggle)
+    const [state, setState] = useState(initialState);
 
-    return ( result ) 
+    const toggle = () => {
+        setState(!state);
+    }
+
+    return [state, toggle]
+    
 }
 
 export default useToggle;
